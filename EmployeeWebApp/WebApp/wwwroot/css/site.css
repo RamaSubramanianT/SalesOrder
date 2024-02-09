@@ -1,0 +1,115 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+
+tr:nth-child(even) {
+    background-color: aquamarine;
+}
+
+th {
+    background-color: aqua;
+    font:bold
+}
+
+td, th {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #e0e0e0;
+}
+
+.bold {
+    background-color:cyan;
+    transition-delay:inherit;
+    font-palette:dark;
+}
+td {
+    text-align: left;
+}
+
+
+table {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+table {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+    font-family: 'Times New Roman', serif; /* Choose a royal-looking font */
+    background-color: #f8f9fa; /* Light background color */
+    color: #212529; /* Text color */
+    /* Add any additional styling you prefer */
+}
+
+header {
+    background-color: #6c757d; /* Dark background color for the header */
+}
+
+.navbar-brand {
+    color: #ffc107; /* Gold color for the brand */
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    color: #212529; /* Dark text color for nav links */
+}
+
+.footer {
+    background-color: #343a40; /* Dark background color for the footer */
+    padding: 10px 0;
+    color: #ffffff; /* Text color for the footer */
+}
+
+/* Add any other styles you find suitable for a royal look */
+/* Add this CSS for the hover effect */
+.navbar-nav .nav-item:hover {
+    background-color: blanchedalmond; /* Change to the desired hover background color */
+    transition: background-color 0.3s ease; /* Smooth transition effect */
+}
+
+    .navbar-nav .nav-item:hover .nav-link {
+        color: #ffffff; /* Change to the desired hover text color */
+    }
+
+/* Add this CSS for the active (selected) item effect */
+.navbar-nav .nav-item.active {
+    background-color: #ffc107; /* Change to the desired active background color */
+}
+
+    .navbar-nav .nav-item.active .nav-link {
+        color: #ffffff; /* Change to the desired active text color */
+    }
+

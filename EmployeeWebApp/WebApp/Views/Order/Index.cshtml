@@ -1,0 +1,48 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Order Details";
+}
+@model List<Orders>
+
+<html>
+<head>
+    <meta http-equiv="Cache-Control" content="public,max-age=3600">
+    <title>Order Information</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="table-responsive">
+    <table class="table">
+        <tr class="bold">
+            
+            <td><b>Orderid</b></td>
+            <td><b>OrderDate</b></td>
+            <td><b>Price</b></td>
+            <td><b>ProductId</b></td>
+            <td><b>UserId</b></td>
+            <td><b>Quantity</b></td>
+            <td><b>TotalPrice</b></td>
+            
+        </tr>
+
+        @foreach (var ele in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(model => ele.orderid)</td>
+                <td>@Html.DisplayFor(model => ele.orderdate)</td>
+                <td>@Html.DisplayFor(model => ele.price)</td>
+                <td>@Html.DisplayFor(model => ele.ProductId)</td>
+                <td>@Html.DisplayFor(model => ele.UserId)</td>
+                <td>@Html.DisplayFor(model => ele.quantity)</td>
+                <td>@Html.DisplayFor(model => ele.totalprice)</td>
+            </tr>
+        }
+    </table>
+    <h3>@DateTime.Now</h3>
+    </div>
+</body>
+</html>
+
