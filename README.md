@@ -1,5 +1,8 @@
 # OrderWebApp
  <h4>This is a Asp.Net Web App that features Order function.</h4>
+ <div align="right">
+	<code><img width="50" src="https://user-images.githubusercontent.com/25181517/121405754-b4f48f80-c95d-11eb-8893-fc325bde617f.png" alt=".NET Core" title=".NET Core"/></code>
+</div>
 
  <h5>Functions</h5>
  <ul>
