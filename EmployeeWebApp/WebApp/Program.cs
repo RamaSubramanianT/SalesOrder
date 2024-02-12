@@ -2,19 +2,26 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Serilog;
+using System;
+
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("WebAppDbConnection") ?? throw new InvalidOperationException("Connection string 'WebAppDbConnection' not found.");
 
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Host.UseSerilog((context, configuration) =>
+    configuration.ReadFrom.Configuration(context.Configuration));
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option =>
     {
         option.LoginPath = "/Home/Login";
-        option.ExpireTimeSpan = TimeSpan.FromSeconds(60);
+        option.ExpireTimeSpan = TimeSpan.FromSeconds(160);
     });
 
 builder.Services.AddOutputCache(
@@ -23,19 +30,21 @@ builder.Services.AddOutputCache(
             options.SizeLimit = 1000;
             options.MaximumBodySize = 1000;
             options.AddBasePolicy(
-                    basepolicy => basepolicy.Expire(TimeSpan.FromSeconds(10))
+                    basepolicy => basepolicy.Expire(TimeSpan.FromSeconds(120))
                 );
         }
     );
 
 builder.Services.AddResponseCaching(
-    options =>
+    options =>  
     {
         options.SizeLimit = 1000;
         options.MaximumBodySize = 1000;
         
     }
     );
+
+
 
 builder.Services.AddAuthorization();
 
@@ -53,6 +62,9 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
+
+app.UseSerilogRequestLogging();
+
 
 app.UseRouting();
 app.UseResponseCaching();

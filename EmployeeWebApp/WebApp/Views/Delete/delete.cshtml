@@ -74,14 +74,13 @@
     <body>
         <div class="container">
         <h1>Delete</h1>
-    @using (Html.BeginForm("delete", "Delete", FormMethod.Post))
-    {
+    <form asp-controller="Delete" asp-action="delete" method="post">
         <label for="orderid">OrderId</label>
         <input asp-for="orderid" type="text"/>
-        @Html.ValidationMessageFor(model=>model.orderid,"","");
+        <span asp-validation-for="@Model.orderid" class="text-danger"></span>
         <br/>
         <input type = "submit" value="Submit"/>
-    }
+        </form>
         </div>
 </body>
 </html>

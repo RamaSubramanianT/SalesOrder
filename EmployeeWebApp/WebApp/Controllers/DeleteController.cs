@@ -13,24 +13,29 @@ namespace WebApp.Controllers
         [Route("DeleteElement")]
         [Route("[controller]/[action]")]
         [Authorize]
-        public IActionResult delete()
+        public IActionResult Delete()
         {
             return View();
         }
         [HttpPost]
         [Route("DeleteElement")]
         [Route("[controller]/[action]")]
-        public IActionResult delete(Orders fc)
+        public IActionResult Delete(Orders fc)
         {
             int id = fc.orderid;
-            string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
-            using (IDbConnection sql = new SqlConnection(conn))
-            {
-                string sqlstr = "delete from orders where orderid = @id";
-                sql.Execute(sqlstr, new { id = id });
-                Console.WriteLine("Success");
-            }
-            return View();
+            
+                Console.WriteLine("Delete " + fc);
+
+                
+                string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
+                using (IDbConnection sql = new SqlConnection(conn))
+                {
+                    string sqlstr = "delete from orders where orderid = @id";
+                    sql.Execute(sqlstr, new { id = id });
+                    Console.WriteLine("Success");
+                }
+                return RedirectToAction("Details0", "Order");
+            
         }
 
 

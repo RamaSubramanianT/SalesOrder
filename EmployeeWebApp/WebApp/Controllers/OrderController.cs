@@ -56,16 +56,14 @@ namespace WebApp.Controllers
         {
 
                 int orderid = fc.orderid;
-                
-                return RedirectToAction("Details", new { orderid = orderid });
-           
-           
+                Console.WriteLine(orderid);
+                return RedirectToAction("Details","Order", new { orderid = orderid });
         }
         [HttpGet]
         public async Task<IActionResult> Details(int orderid)
         {
             Orders obj;
-            
+            Console.WriteLine(orderid);
             string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
             using (IDbConnection sql = new SqlConnection(conn))
             {
