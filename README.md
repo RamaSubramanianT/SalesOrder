@@ -17,5 +17,7 @@
  <ul>
   <li>Login and logout: CookieAuthentication</li>
   <li>Cache: OutputCache and ResponseCache</li>
-  <li>Attributes like: Required, string length, range()</li>
+  <li>View Validation Attributes like: Required, string length, range()</li>
+  <li>Route Attribute</li>
+  <li>Bootstrap for CSS</li>
  </ul>
