@@ -68,48 +68,113 @@ table {
 }
 
 body {
-    font-family: 'Times New Roman', serif; /* Choose a royal-looking font */
-    background-color: #f8f9fa; /* Light background color */
-    color: #212529; /* Text color */
-    /* Add any additional styling you prefer */
+    font-family: 'Times New Roman', serif;
+    background-color: #f8f9fa;
+    color: #212529; 
+   
 }
 
 header {
-    background-color: #6c757d; /* Dark background color for the header */
+    background-color: #6c757d;
 }
-
 .navbar-brand {
-    color: #ffc107; /* Gold color for the brand */
+    color: #ffc107;
     font-weight: bold;
 }
 
 .navbar-nav .nav-link {
-    color: #212529; /* Dark text color for nav links */
+    color: #212529; 
 }
 
 .footer {
-    background-color: #343a40; /* Dark background color for the footer */
+    background-color: #343a40;
     padding: 10px 0;
-    color: #ffffff; /* Text color for the footer */
+    color: #ffffff; 
+    position:relative;
 }
 
-/* Add any other styles you find suitable for a royal look */
-/* Add this CSS for the hover effect */
+
 .navbar-nav .nav-item:hover {
-    background-color: blanchedalmond; /* Change to the desired hover background color */
-    transition: background-color 0.3s ease; /* Smooth transition effect */
+    background-color: blanchedalmond; 
+    transition: background-color 0.3s ease; 
 }
 
     .navbar-nav .nav-item:hover .nav-link {
-        color: #ffffff; /* Change to the desired hover text color */
+        color: #ffffff; 
     }
 
-/* Add this CSS for the active (selected) item effect */
+
 .navbar-nav .nav-item.active {
-    background-color: #ffc107; /* Change to the desired active background color */
+    background-color: #ffc107; 
 }
 
     .navbar-nav .nav-item.active .nav-link {
-        color: #ffffff; /* Change to the desired active text color */
+        color: #ffffff; 
     }
+
+.table-responsive {
+    overflow-x: auto;
+}
+
+.divTable {
+    display: table;
+    width: 100%;
+    background-color: #eee;
+    border-collapse: collapse;
+    border: 1px solid #000;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size:medium;
+    font:bolder;
+}
+
+.divRow {
+    display: table-row;
+}
+
+.divRow:nth-child(2n+1){
+    background-color:aquamarine;
+}
+
+    .divRow:nth-child(2n) {
+        background-color: azure;
+    }
+
+.divCell {
+    display: table-cell;
+    padding: 10px;
+    border: 1px solid #000;
+    text-align: center;
+}
+
+.divRow:hover {
+        background-color: aqua;
+        cursor: pointer;
+}
+
+.divRow:nth-child(even) .divCell {
+    background-color: #f2f2f2;
+}
+
+h3 {
+    text-align: center;
+}
+
+/* For mobile view */
+@media (max-width: 600px) {
+    .divRow {
+        display: block;
+        margin-bottom: 20px; /* Add margin between blocks */
+    }
+
+    .divCell {
+        display: block;
+        border: none;
+        text-align: left;
+        padding: 5px;
+    }
+
+        .divCell:hover {
+            background-color: transparent; /* Remove hover background color */
+        }
+}
 

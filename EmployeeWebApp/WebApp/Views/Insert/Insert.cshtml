@@ -74,6 +74,7 @@
             font-size: 16px;
             width: 100%;
             margin-top: 10px;
+            position:relative;
         }
 
             input[type="submit"]:hover {
@@ -93,19 +94,19 @@
         <form asp-controller="Insert" asp-action="Insert" method="post">
             <label for="orderid">Order ID</label>
             <input asp-for="orderid" type="text" />
-            <span asp-validation-for="orderid" class="text-danger"></span>
+            <span asp-validation-for="@Model.orderid" class="text-danger"></span>
 
             <label for="prodid">Product ID</label>
             <input asp-for="ProductId" type="text"/>
-            <span asp-validation-for="ProductId" class="text-danger"></span>
+            <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
 
             <label for="userid">User ID</label>
             <input asp-for="UserId" type="text"/>
-            <span asp-validation-for="UserId" class="text-danger"></span>
+            <span asp-validation-for="@Model.UserId" class="text-danger"></span>
 
             <label for="orderdate">Order Date</label>
             <input asp-for="orderdate" type="date" />
-            <span asp-validation-for="orderdate" class="text-danger"></span>
+            <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
 
             <input type="submit" value="Submit" />
         </form>

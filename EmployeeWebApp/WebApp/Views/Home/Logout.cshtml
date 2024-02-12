@@ -70,10 +70,6 @@
             border-radius: 4px;
         }
 
-        .text-danger {
-            color: red;
-        }
-
         h1 {
             position: center;
             color: #4caf50;
@@ -88,7 +84,7 @@
     <form asp-controller="Home" asp-action="Logout" method="post">
         <label for="username">Are you sure you want to logout ?</label>
         <input asp-for="username" type="text" />
-        @Html.ValidationMessageFor(m => m.username, " ", new { @class = "text-danger" })
+        <span asp-validation-for="username" class="text-danger"></span>
         
         <br />
         <br />

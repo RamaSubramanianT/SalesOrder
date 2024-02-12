@@ -73,26 +73,24 @@
                 background-color: #45a049;
             }
 
-        .text-danger {
-            color: red;
-        }
+        
     </style>
 </head>
 <body>
     <h1>Update</h1>
     <div class="container">
-    @using (Html.BeginForm("update0", "Update", FormMethod.Post))
-    {
+    <form asp-controller="Update" asp-action="update0" method="post">
         <label for="orderid">OrderId</label>
         <input asp-for="orderid" type="text"/>
-        @Html.ValidationMessageFor(Model => Model.orderid, "", new { @class = "text-danger" })
+        <span asp-validation-for="@Model.orderid" class="text-danger"></span>
+        
         <br />
         <label for="orderdate">Order Date</label>
         <input asp-for="orderdate" type="date"/>
-        @Html.ValidationMessageFor(Model => Model.orderdate, "", new { @class = "text-danger" })
+        <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
         <br />
         <input type="submit" value="Submit" />
-    }
+     </form>
     </div>
 </body>
 </html>

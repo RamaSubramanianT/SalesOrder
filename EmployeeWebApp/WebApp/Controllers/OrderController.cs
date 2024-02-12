@@ -38,7 +38,7 @@ namespace WebApp.Controllers
 
 
         [HttpGet]
-        [OutputCache(Duration=100)]
+        
         [Route("Select")]
         [Route("[controller]/[action]")]
         [Authorize]

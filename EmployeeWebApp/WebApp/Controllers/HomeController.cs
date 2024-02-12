@@ -40,10 +40,9 @@ namespace WebApp.Controllers
             [HttpPost]
             [Route("")]
             [Route("[controller]/[action]")]
-            public async Task<IActionResult> LoginAsync(Login lg)
+            public async Task<IActionResult> Login(Login lg)
             {
-                Console.WriteLine(lg.username);
-                Console.WriteLine(lg.password);
+                
                 string temp;
                 int flag = 0;
                 string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
@@ -67,15 +66,15 @@ namespace WebApp.Controllers
                     var claims = new List<Claim>
                     {
                         new Claim(ClaimTypes.Name, lg.username),
-                    // Add more claims as needed
+                    
                     };
 
                     var claimsIdentity = new ClaimsIdentity(
-                        claims, CookieAuthenticationDefaults.AuthenticationScheme);
+                    claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                     var authProperties = new AuthenticationProperties
                     {
-                        // Customize properties if needed
+                            
                     };
 
                     await HttpContext.SignInAsync(
@@ -83,14 +82,11 @@ namespace WebApp.Controllers
                         new ClaimsPrincipal(claimsIdentity),
                         authProperties);
 
-                    return RedirectToAction("Index", "Order");
-                }
-                else
-                {
-                    ViewBag.ErrorMessage = "Incorrect Credentials";
-                    return RedirectToAction("Login", "Home", new { lg = lg });
+                        return RedirectToAction("Index", "Order");
                 }
 
+                return RedirectToAction("Login", "Home", new { lg = lg });
+                
 
             }
             [HttpGet]

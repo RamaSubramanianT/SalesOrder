@@ -11,38 +11,40 @@
     <meta http-equiv="Cache-Control" content="public,max-age=3600">
     <title>Order Information</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
     
 </head>
 <body>
+    <form id="id1">
     <div class="table-responsive">
-    <table class="table">
-        <tr class="bold">
+    <div class="divTable">
+        <div class="divRow">
             
-            <td><b>Orderid</b></td>
-            <td><b>OrderDate</b></td>
-            <td><b>Price</b></td>
-            <td><b>ProductId</b></td>
-            <td><b>UserId</b></td>
-            <td><b>Quantity</b></td>
-            <td><b>TotalPrice</b></td>
+            <div class="divCell">OrderId</div>
+            <div class="divCell">OrderDate</div>
+            <div class="divCell">Price</div>
+            <div class="divCell">ProductId</div>
+            <div class="divCell">UserId</div>
+            <div class="divCell">Quantity</div>
+            <div class="divCell">Total Price</div>
             
-        </tr>
+        </div>
 
         @foreach (var ele in Model)
         {
-            <tr>
-                <td>@Html.DisplayFor(model => ele.orderid)</td>
-                <td>@Html.DisplayFor(model => ele.orderdate)</td>
-                <td>@Html.DisplayFor(model => ele.price)</td>
-                <td>@Html.DisplayFor(model => ele.ProductId)</td>
-                <td>@Html.DisplayFor(model => ele.UserId)</td>
-                <td>@Html.DisplayFor(model => ele.quantity)</td>
-                <td>@Html.DisplayFor(model => ele.totalprice)</td>
-            </tr>
+            <div class="divRow">
+                <div class="divCell">@Html.DisplayFor(model => ele.orderid)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.orderdate)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.price)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.ProductId)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.UserId)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.quantity)</div>
+                <div class="divCell">@Html.DisplayFor(model => ele.totalprice)</div>
+            </div>
         }
-    </table>
+    </div>
     <h3>@DateTime.Now</h3>
     </div>
+    </form>
 </body>
 </html>
-
