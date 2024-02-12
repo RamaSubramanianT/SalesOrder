@@ -15,7 +15,7 @@
 <h5>These are some features we incorporated in this application</h5>
 <h5>Features</h5>
  <ul>
-  <li>Login and logout</li>
-  <li>Caching</li>
+  <li>Login and logout: CookieAuthentication</li>
+  <li>Cache: OutputCache and ResponseCache</li>
   <li>Attributes like: Required, string length, range()</li>
  </ul>
