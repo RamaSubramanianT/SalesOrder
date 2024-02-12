@@ -1,6 +1,6 @@
 # OrderWebApp
  <h4>This is a Asp.Net Web App that features Order function.</h4>
-&#x1F4E6; C
+<img alt="Static Badge" src="https://img.shields.io/#512BD4/blue">
 
  <h5>Functions</h5>
  <ul>
