@@ -1,14 +1,19 @@
 # OrderWebApp
  <h4>This is a Asp.Net Web App that features Order function.</h4>
-<div style="display: inline-block;">
-    <img alt="C#" src="https://img.shields.io/badge/C%23-blue?style=for-the-badge&logo=C%23">
 
+ <div id="banner" style="overflow: hidden; display: inline-block;">
+        <div class="" style="max-width: 20%; max-height: 20%;">
+            <img alt="C#" src="https://img.shields.io/badge/C%23-blue?style=for-the-badge&logo=C%23">
+        </div>
 
-    <img alt="ASP.NET" src="https://img.shields.io/badge/Asp.Net-purple?style=for-the-badge&logo=.net">
+        <div class="" style="max-width: 100%; max-height: 100%;">
+            <img alt="ASP.NET" src="https://img.shields.io/badge/Asp.Net-purple?style=for-the-badge&logo=.net">
+        </div>
 
-
-    <img alt="Dapper" src="https://img.shields.io/badge/Dapper-green?style=for-the-badge">
-</div>
+        <div class="" style="max-width: 20%; max-height: 20%;">
+            <img alt="Dapper" src="https://img.shields.io/badge/Dapper-green?style=for-the-badge">
+        </div>
+    </div>
 
  <h5>Functions</h5>
  <ul>
