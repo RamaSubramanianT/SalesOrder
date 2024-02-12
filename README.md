@@ -25,3 +25,34 @@
   <li>Route Attribute</li>
   <li>Bootstrap for CSS</li>
  </ul>
+
+# Working
+<h3>Login Page</h3>
+
+![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/8ce42f17-6ea6-48c0-85bc-701909da108e)
+
+<hr>
+<h3>Index Page</h3>
+<p>This page shows all the items present in Orders Table</p>
+
+![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/072c380d-f643-4279-9b99-5d6f7e0b6a37)
+
+<hr>
+<h3>Update Page</h3>
+
+![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/bffa4718-c17f-4ad9-aea2-4425c769d6b2)
+
+<hr>
+<h3>Delete Page</h3>
+
+![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/7b2c26a5-c809-4e01-986c-616b267e701e)
+
+<hr>
+<h3>Insert Page</h3>
+
+![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/d3a2d52c-bfe3-4004-bebe-4cb5c4594910)
+
+# Working Process
+<p>We use Asp.Net MVC Web App to develop this application, here controller contains action methods which is called when client(web browser) sends a request to server, in response the server will send the contents, this content are mainly webpages which is present in Views and process the logic in the action method.</p>
+
+
