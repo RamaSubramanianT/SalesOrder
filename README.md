@@ -62,6 +62,11 @@
 <p>All the fields are validated, no empty value can be passed in any of the input field. Minimum and maximum length are set in product id field, in orderid value greater than 100 is invalid. Password is set to be 8 alphanumeric long and many more validation are done. Error messages will be displayed below the input field if any condition is violated. If a value is not present in Sql database then <b>"No Record Found"</b> is shown.</p>
 <hr>
 
+<h3>Log</h3>
+
+![image](https://github.com/RamaSubramanianT/SalesOrder/assets/109201625/be4982e9-f757-45a5-a5b6-5feb4a1ea6c2)
+
+<p>Using Serilog, every Event, Error and Exception is recorded in console and saved in log file.</p>
 
 
 
