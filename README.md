@@ -24,6 +24,8 @@
   <li>View Validation Attributes like: Required, string length, range()</li>
   <li>Route Attribute</li>
   <li>Bootstrap for CSS</li>
+  <li>Mobile Responsive</li>
+  <li>Logging: Using Serilog</li>
  </ul>
 
 # Working
