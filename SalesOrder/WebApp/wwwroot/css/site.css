@@ -92,14 +92,15 @@ header {
     display: table-row;
 }
 
-.divRow:hover {
-    background-color: skyblue;
-}
 
 .divRow:nth-child(2n+1) {
     background: background: rgb(174,228,238);
     background: radial-gradient(circle, rgba(174,228,238,1) 0%, rgba(148,233,212,1) 100%);
-        
+}
+
+
+.divRow:hover {
+    background-color: skyblue;
 }
 
 .divCell {

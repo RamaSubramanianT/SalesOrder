@@ -51,7 +51,6 @@ namespace WebApp.Controllers
                     if (temp == lg.password)
                     {
                         flag = 1;
-
                     }
                     else
                     {
