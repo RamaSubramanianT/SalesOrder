@@ -54,7 +54,20 @@
 
 ![image](https://github.com/RamaSubramanianT/OrderWebApp/assets/109201625/d3a2d52c-bfe3-4004-bebe-4cb5c4594910)
 
+<hr>
+<h3>Attribute Validation</h3>
+
+![image](https://github.com/RamaSubramanianT/SalesOrder/assets/109201625/0370b7f5-d74a-42d0-b5f9-8c7443dc5dfb) ![image](https://github.com/RamaSubramanianT/SalesOrder/assets/109201625/7d2e4459-fada-4431-9e86-571ab4103970) 
+
+<p>All the fields are validated, no empty value can be passed in any of the input field. Minimum and maximum length are set in product id field, in orderid value greater than 100 is invalid. Password is set to be 8 alphanumeric long and many more validation are done. Error messages will be displayed below the input field if any condition is violated. If a value is not present in Sql database then <b>"No Record Found"</b> is shown.</p>
+<hr>
+
+
+
+
 # Working Process
 <p>We use Asp.Net MVC Web App to develop this application, here controller contains action methods which is called when client(web browser) sends a request to server, in response the server will send the contents, this content are mainly webpages which is present in Views and process the logic in the action method.</p>
 
 
+
+©️ SalesOrder 2024
