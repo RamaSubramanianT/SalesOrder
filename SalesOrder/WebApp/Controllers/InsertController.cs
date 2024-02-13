@@ -31,7 +31,7 @@ namespace WebApp.Controllers
 
                 if(date < new DateTime(2020, 01, 01))
                 {
-                    ViewBag.dateMessage = "Please enter date after 01/01/2001";
+                    ViewBag.dateMessage = "Please enter a date after 01/01/2020";
                     return View();
                 }
 
