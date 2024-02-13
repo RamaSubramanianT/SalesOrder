@@ -62,9 +62,9 @@
             margin-top: 10px;
         }
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
         .text-danger {
             color: red;
@@ -78,7 +78,6 @@
     <div class="container">
         <form asp-controller ="Order" asp-action ="Details0" method="post">
             <label for="orderid">OrderId</label><br/>
-
             <input asp-for="orderid" type="text"/><br/>
             <span asp-validation-for="orderid" class="text-danger"></span>
             <input type="submit" value="Submit" />

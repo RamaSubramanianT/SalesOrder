@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
+using System.Runtime.CompilerServices;
 
 namespace WebApp.Models
 {
@@ -9,7 +10,6 @@ namespace WebApp.Models
         [Range(1,100,ErrorMessage = "Input a number within range 1-100")]
         public int orderid { get; set; }
         [Required(ErrorMessage = "This field can not be empty")]
-        
         public DateTime orderdate { get; set; }
         
         public decimal price { get; set; }
@@ -18,11 +18,10 @@ namespace WebApp.Models
         [Display(Name = "Product Id number")]
         [MinLength(3, ErrorMessage = "Enter Valid Product Id")]
         [MaxLength(12, ErrorMessage = "Value Length Exceeded 12 characters")]
-        public string ProductId { get; set; }
+        public string? ProductId { get; set; }
 
         [Required(ErrorMessage = "This field can not be empty")]
         [Range(1,100,ErrorMessage = "Out of Range")]
-        
         public int UserId { get; set; }
 
         public int quantity { get; set; }

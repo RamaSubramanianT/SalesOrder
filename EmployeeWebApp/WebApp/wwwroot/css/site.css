@@ -18,61 +18,20 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-}
-
-
-tr:nth-child(even) {
-    background-color: aquamarine;
-}
-
-th {
-    background-color: aqua;
-    font:bold
-}
-
-td, th {
+    margin-bottom: 60px;
+    height: 100%;
+    margin: 10px;
     padding: 10px;
-    border: 1px solid #ddd;
-}
-
-tr:hover {
-    background-color: #e0e0e0;
-}
-
-.bold {
-    background-color:cyan;
-    transition-delay:inherit;
-    font-palette:dark;
-}
-td {
-    text-align: left;
-}
-
-
-table {
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-
-table {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-body {
+    background: linear-gradient(200,89,200);
     font-family: 'Times New Roman', serif;
     background-color: #f8f9fa;
-    color: #212529; 
-   
+    color: #212529;
+    background: #70e1f5; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
 
 header {
     background-color: #6c757d;
@@ -99,18 +58,18 @@ header {
     transition: background-color 0.3s ease; 
 }
 
-    .navbar-nav .nav-item:hover .nav-link {
-        color: #ffffff; 
-    }
+.navbar-nav .nav-item:hover .nav-link {
+    color: #ffffff; 
+}
 
 
 .navbar-nav .nav-item.active {
     background-color: #ffc107; 
 }
 
-    .navbar-nav .nav-item.active .nav-link {
-        color: #ffffff; 
-    }
+.navbar-nav .nav-item.active .nav-link {
+    color: #ffffff; 
+}
 
 .table-responsive {
     overflow-x: auto;
@@ -125,30 +84,29 @@ header {
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size:medium;
     font:bolder;
+    padding:10px;
+    margin-top:10px;
 }
 
 .divRow {
     display: table-row;
 }
 
-.divRow:nth-child(2n+1){
-    background-color:aquamarine;
+.divRow:hover {
+    background-color: skyblue;
 }
 
-    .divRow:nth-child(2n) {
-        background-color: azure;
-    }
+.divRow:nth-child(2n+1) {
+    background: background: rgb(174,228,238);
+    background: radial-gradient(circle, rgba(174,228,238,1) 0%, rgba(148,233,212,1) 100%);
+        
+}
 
 .divCell {
     display: table-cell;
     padding: 10px;
     border: 1px solid #000;
     text-align: center;
-}
-
-.divRow:hover {
-        background-color: aqua;
-        cursor: pointer;
 }
 
 .divRow:nth-child(even) .divCell {
@@ -165,7 +123,9 @@ h3 {
         display: block;
         margin-bottom: 20px; /* Add margin between blocks */
     }
-
+    .divRow:hover{
+        background-color:skyblue;
+    }
     .divCell {
         display: block;
         border: none;
@@ -173,8 +133,7 @@ h3 {
         padding: 5px;
     }
 
-        .divCell:hover {
-            background-color: transparent; /* Remove hover background color */
-        }
+    .divCell:hover {
+        background-color: transparent; /* Remove hover background color */
+    }
 }
-

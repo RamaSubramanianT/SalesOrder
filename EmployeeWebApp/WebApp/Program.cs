@@ -1,20 +1,24 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Serilog;
-using System;
+using Serilog.Exceptions;
+
 
 
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("WebAppDbConnection") ?? throw new InvalidOperationException("Connection string 'WebAppDbConnection' not found.");
 
-
-// Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Host.UseSerilog((context, configuration) =>
-    configuration.ReadFrom.Configuration(context.Configuration));
+builder.Host.UseSerilog((context, services, configuration) => configuration
+    .ReadFrom.Configuration(context.Configuration)
+    .ReadFrom.Services(services)
+    .Enrich.FromLogContext()
+    .Enrich.WithExceptionDetails()
+    .WriteTo.Console(outputTemplate:
+        "[{Timestamp:HH:mm:ss} {Level:u3}] {Message:lj}{NewLine}{Exception}"));
+
+
 
 builder.Services.AddAuthentication(
     CookieAuthenticationDefaults.AuthenticationScheme)
@@ -32,6 +36,7 @@ builder.Services.AddOutputCache(
             options.AddBasePolicy(
                     basepolicy => basepolicy.Expire(TimeSpan.FromSeconds(120))
                 );
+            options.AddBasePolicy(builder => builder.Tag("tag-all"));
         }
     );
 
@@ -44,32 +49,31 @@ builder.Services.AddResponseCaching(
     }
     );
 
-
-
 builder.Services.AddAuthorization();
 
 builder.Services.AddRazorPages();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
-app.UseSerilogRequestLogging();
-
-
 app.UseRouting();
+
 app.UseResponseCaching();
+
 app.UseOutputCache();
+
 app.UseAuthorization();
+
+app.UseSerilogRequestLogging();
 
 app.MapControllerRoute(
     name: "default",

@@ -27,13 +27,11 @@ namespace WebApp.Controllers
                 _logger = logger;
             }
 
-
             [HttpGet]
             [Route("")]
             [Route("[controller]/[action]")]
             public IActionResult Login()
             {
-
                 return View();
             }
 
@@ -42,14 +40,14 @@ namespace WebApp.Controllers
             [Route("[controller]/[action]")]
             public async Task<IActionResult> Login(Login lg)
             {
-                
-                string temp;
+                string? temp;
                 int flag = 0;
+                
                 string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
                 using (IDbConnection sql = new SqlConnection(conn))
                 {
                     string sqlstring = "select passwd from loginuser where username = @usr";
-                    temp = sql.QueryFirstOrDefault<string>(sqlstring, new { usr = lg.username });
+                    temp = await sql.QueryFirstOrDefaultAsync<string>(sqlstring, new { usr = lg.username });
                     if (temp == lg.password)
                     {
                         flag = 1;
@@ -58,6 +56,8 @@ namespace WebApp.Controllers
                     else
                     {
                         flag = 0;
+                        ViewBag.Message1 = "Username or Password Incorrect";
+                        return View();
                     }
                 }
 
@@ -82,22 +82,22 @@ namespace WebApp.Controllers
                         new ClaimsPrincipal(claimsIdentity),
                         authProperties);
 
-                        return RedirectToAction("Index", "Order");
+                    return RedirectToAction("Index", "Order");
                 }
-
+                
                 return RedirectToAction("Login", "Home", new { lg = lg });
                 
 
             }
             [HttpGet]
-            public async Task<IActionResult> Logout()
+            public IActionResult Logout()
             {
                 return View();
             }
             [HttpPost]
             public async Task<IActionResult> Logout(Login lg)
             {
-                if (lg.username == "Yes" || lg.username == "yes" || lg.username == "y")
+                if (lg.username == "Yes" || lg.username == "yes" || lg.username == "y" || lg.username == "")
                 {
                     await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
                     

@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace WebApp.Models
 {
@@ -7,12 +8,13 @@ namespace WebApp.Models
         [Required(ErrorMessage = "Don't leave the field empty")]
         [StringLength(100)]
         [MinLength(2)]
-        public string username {  get; set; }
+        public string? username {  get; set; }
 
         [Required(ErrorMessage = "Don't leave the field empty")]
         [StringLength(100)]
         [MinLength(8)]
-        public string password { get; set; }
+        [PasswordPropertyText]
+        public string? password { get; set; }
 
     }
 }

@@ -69,28 +69,27 @@
             margin-top: 10px;
         }
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
-        
     </style>
 </head>
 <body>
     <h1>Update</h1>
     <div class="container">
-    <form asp-controller="Update" asp-action="update0" method="post">
-        <label for="orderid">OrderId</label>
-        <input asp-for="orderid" type="text"/>
-        <span asp-validation-for="@Model.orderid" class="text-danger"></span>
-        
-        <br />
-        <label for="orderdate">Order Date</label>
-        <input asp-for="orderdate" type="date"/>
-        <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
-        <br />
-        <input type="submit" value="Submit" />
-     </form>
+        <form asp-controller="Update" asp-action="update0" method="post">
+            <label for="orderid">OrderId</label>
+            <input asp-for="orderid" type="text"/>
+            <span asp-validation-for="@Model.orderid" class="text-danger"></span>
+            <br />
+            <label for="orderdate">Order Date</label>
+            <input asp-for="orderdate" type="date"/>
+            <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
+            <br />
+            <input type="submit" value="Submit" />
+         </form>
     </div>
+    <h3 class="text-danger" style="align-content:center; padding:3px; margin-top:4px; font-size:15px">@ViewBag.Message</h3>
 </body>
 </html>

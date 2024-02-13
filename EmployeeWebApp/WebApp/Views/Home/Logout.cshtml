@@ -60,9 +60,9 @@
             margin-top: 10px;
         }
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
         input[type="password"] {
             width: 100%;
@@ -81,16 +81,15 @@
 <body>
     <h1>Logout</h1>
     <div class="container">
-    <form asp-controller="Home" asp-action="Logout" method="post">
-        <label for="username">Are you sure you want to logout ?</label>
-        <input asp-for="username" type="text" />
-        <span asp-validation-for="username" class="text-danger"></span>
-        
-        <br />
-        <br />
-        <input type="Submit" value="Submit" />
-        <h6>@ViewBag.ErrorMessage</h6>
-    </form>
+        <form asp-controller="Home" asp-action="Logout" method="post">
+            <label for="username">Are you sure you want to logout ?</label>
+            <input asp-for="username" type="text" />
+            <span asp-validation-for="username" class="text-danger"></span>
+            <br />
+            <br />
+            <input type="Submit" value="Submit" />
+            <h6>@ViewBag.ErrorMessage</h6>
+        </form>
     </div>
 </body>
 </html>

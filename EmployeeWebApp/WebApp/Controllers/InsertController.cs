@@ -26,8 +26,14 @@ namespace WebApp.Controllers
             {
                 int id = fc.orderid;
                 DateTime date = fc.orderdate;
-                string prodid = fc.ProductId;
+                string? prodid = fc.ProductId;
                 int uid = fc.UserId;
+
+                if(date < new DateTime(2020, 01, 01))
+                {
+                    ViewBag.dateMessage = "Please enter date after 01/01/2001";
+                    return View();
+                }
 
                 string temp = Convert.ToString(date);
                 string[] temp1 = new string[2];
@@ -35,17 +41,24 @@ namespace WebApp.Controllers
                 string dat = temp1[0];
 
                 string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
-                using (IDbConnection sql = new SqlConnection(conn))
+                try
                 {
-                    string sqlstring = "insert into Orders(orderid,orderdate,ProductId,UserId) values(@id,@date,@pid,@uid)";
-                    await sql.ExecuteAsync(sqlstring, new { id = id, date = dat, pid = prodid, uid = uid });
-                    sqlstring = "Exec updatequantity @uid,@oid";
-                    await sql.ExecuteAsync(sqlstring, new { uid = uid, oid = id });
-                    sqlstring = "Exec updaterealprice @oid";
-                    await sql.ExecuteAsync(sqlstring, new { oid = id });
-                    Console.WriteLine("Success");
+                    using (IDbConnection sql = new SqlConnection(conn))
+                    {
+                        string sqlstring = "insert into Orders(orderid,orderdate,ProductId,UserId) values(@id,@date,@pid,@uid)";
+                        await sql.ExecuteAsync(sqlstring, new { id = id, date = dat, pid = prodid, uid = uid });
+                        sqlstring = "Exec updatequantity @uid,@oid";
+                        await sql.ExecuteAsync(sqlstring, new { uid = uid, oid = id });
+                        sqlstring = "Exec updaterealprice @oid";
+                        await sql.ExecuteAsync(sqlstring, new { oid = id });
+                        Console.WriteLine("Success");
+                    }
                 }
-
+                catch(Exception ex)
+                {
+                    ViewBag.Message = ex.Message;
+                    return View();
+                }
                 Console.WriteLine($"{id}  {dat}\t\t{prodid}  {uid}");
 
                 return RedirectToAction("Index", "Order");

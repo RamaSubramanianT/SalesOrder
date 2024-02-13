@@ -10,35 +10,36 @@
         <title>Insert New Info</title>
     </head>
     <body>
+        <h3 class="text-danger" style="align-content:center">@ViewBag.Message</h3>
         <div class="container">
-        <div class="table-responsive">
-        <table class="table">
-        <tr class="bold">
+            <div class="divTable">
+                <div class="divRow">
+        
 
-            <td><b>Orderid</b></td>
-            <td><b>OrderDate</b></td>
-            <td><b>Price</b></td>
-            <td><b>ProductId</b></td>
-            <td><b>UserId</b></td>
-            <td><b>Quantity</b></td>
-            <td><b>TotalPrice</b></td>
+                    <div class="divCell"><b>Orderid</b></div>
+                    <div class="divCell"><b>OrderDate</b></div>
+                    <div class="divCell"><b>Price</b></div>
+                    <div class="divCell"><b>ProductId</b></div>
+                    <div class="divCell"><b>UserId</b></div>
+                    <div class="divCell"><b>Quantity</b></div>
+                    <div class="divCell"><b>TotalPrice</b></div>
 
-        </tr>
+                </div>
 
         
-            <tr>
-                <td>@Html.DisplayFor(model => Model.orderid)</td>
-                <td>@Html.DisplayFor(model => Model.orderdate)</td>
-                <td>@Html.DisplayFor(model => Model.price)</td>
-                <td>@Html.DisplayFor(model => Model.ProductId)</td>
-                <td>@Html.DisplayFor(model => Model.UserId)</td>
-                <td>@Html.DisplayFor(model => Model.quantity)</td>
-                <td>@Html.DisplayFor(model => Model.totalprice)</td>
-            </tr>
+                <div class="divRow">
+                    <div class="divCell">@Html.DisplayFor(model => Model.orderid)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.orderdate)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.price)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.ProductId)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.UserId)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.quantity)</div>
+                    <div class="divCell">@Html.DisplayFor(model => Model.totalprice)</div>
+                </div>
         
-    </table>
+            </div>
         </div>
-    </div>
+    
     </body>
 </html>
 

@@ -77,11 +77,9 @@
             position:relative;
         }
 
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-
-        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
 
         .text-danger {
             color: red;
@@ -107,9 +105,11 @@
             <label for="orderdate">Order Date</label>
             <input asp-for="orderdate" type="date" />
             <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
+            <h3 class="text-danger" style=" padding:3px; font-size:15px">@ViewBag.dateMessage</h3>
 
             <input type="submit" value="Submit" />
         </form>
     </div>
+    <h3 class="text-danger" style="align-content:center; padding:3px; margin-top:5px; font-size:15px;">@ViewBag.Message</h3>
 </body>
 </html>

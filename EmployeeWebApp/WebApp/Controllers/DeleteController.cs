@@ -24,21 +24,24 @@ namespace WebApp.Controllers
         {
             int id = fc.orderid;
             
-                Console.WriteLine("Delete " + fc);
+            Console.WriteLine("Delete " + fc);
+            int temp;
 
-                
-                string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
-                using (IDbConnection sql = new SqlConnection(conn))
-                {
-                    string sqlstr = "delete from orders where orderid = @id";
-                    sql.Execute(sqlstr, new { id = id });
-                    Console.WriteLine("Success");
-                }
-                return RedirectToAction("Details0", "Order");
+            string conn = "Server=192.168.0.23,1427;Initial Catalog=interns;Integrated Security=False;user id=Interns;password=test;";
+            using (IDbConnection sql = new SqlConnection(conn))
+            {
+                string sqlstr = "delete from orders where orderid = @id";
+                temp = sql.Execute(sqlstr, new { id = id });
+                Console.WriteLine("Success");
+            }
+
+            if(temp == 0)
+            {
+                ViewBag.Message = "No Record Found";
+                return View();
+            }
+            return RedirectToAction("Details0", "Order");
             
         }
-
-
-
     }
 }
