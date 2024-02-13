@@ -1,4 +1,4 @@
-# OrderWebApp
+# Sales Order Web Application
  <h4>This is a Asp.Net Web App that features Order function.</h4>
 <div style="display: inline-block;">
     <img alt="C#" src="https://img.shields.io/badge/C%23-blue?style=for-the-badge&logo=C%23">
@@ -24,6 +24,8 @@
   <li>View Validation Attributes like: Required, string length, range()</li>
   <li>Route Attribute</li>
   <li>Bootstrap for CSS</li>
+  <li>Mobile Responsive</li>
+  <li>Logging: Using Serilog</li>
  </ul>
 
 # Working
