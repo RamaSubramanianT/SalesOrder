@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.OutputCaching;
 using System.Data.SqlClient;
 using System.Data;
 using Dapper;
-using WebApp.Models;
+using WebApp.ViewModel;
 
 namespace WebApp.Controllers
 {
@@ -20,7 +20,7 @@ namespace WebApp.Controllers
         [OutputCache(Duration = 60)]
         [Route("InsertElement")]
         [Route("[controller]/[action]")]
-        public async Task<IActionResult> Insert(Orders fc)
+        public async Task<IActionResult> Insert(InsertVM fc)
         {
             if (ModelState.IsValid)
             {

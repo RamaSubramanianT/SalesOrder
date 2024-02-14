@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Data.SqlClient;
 using System.Data;
-using WebApp.Models;
+using WebApp.ViewModel;
 using Dapper;
 using Microsoft.AspNetCore.Authorization;
 
@@ -20,7 +20,7 @@ namespace WebApp.Controllers
         [HttpPost]
         [Route("DeleteElement")]
         [Route("[controller]/[action]")]
-        public IActionResult Delete(Orders fc)
+        public IActionResult Delete(DeleteVM fc)
         {
             int id = fc.orderid;
             

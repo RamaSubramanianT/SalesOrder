@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Data;
 using System.Data.SqlClient;
 using WebApp.Models;
+using WebApp.ViewModel;
 
 namespace WebApp.Controllers
 {
@@ -22,7 +23,7 @@ namespace WebApp.Controllers
         [HttpPost]
         [Route("Update")]
         [Route("[controller]/[action]")]
-        public async Task<IActionResult> update0(Orders fc)
+        public async Task<IActionResult> update0(UpdateVM fc)
         {
             int tem;
             Console.WriteLine("Flag");

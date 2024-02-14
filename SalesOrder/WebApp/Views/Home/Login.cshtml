@@ -13,8 +13,10 @@
                 background-color: #f4f4f4;
                 margin: 0;
                 padding: 0;
+                
             }
 
+            
             .container {
                 max-width: 500px;
                 margin: 20px auto;
@@ -22,12 +24,12 @@
                 background-color: #fff;
                 border-radius: 5px;
                 box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                background-color: #4158D0;
+                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
+                filter: blur(1px);
             }
 
-            h1 {
-                color: #333;
-                text-align: center;
-            }
+            
 
             form {
                 margin-top: 20px;
@@ -60,9 +62,11 @@
                 margin-top: 10px;
             }
 
-                input[type="submit"]:hover {
-                    background-color: #45a049;
-                }
+
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
 
             input[type="password"]{
                 width:100%;
@@ -73,17 +77,27 @@
             .text-danger {
                 color: red;
             }
-            h1{
-                position:center;
-                color:#4caf50;
-                margin-top:10px;
+
+            h1 {
+                color: ghostwhite;
+                text-align: center;
+                font: bolder;
+                font-stretch: expanded;
+                margin-top:5px;
             }
-        
+
+        .container{
+            filter: drop-shadow(15px 26px 17px #000000);
+            }
+
+            label{
+                color:ghostwhite;
+            }
         </style>
     </head>
     <body>
         <h1>Login</h1>
-        <div class="container">
+        <div class="contains">
             <div class="demo">
                 <form  asp-controller="Home" asp-action="Login" method="post">
                     <div class="form-group">
@@ -104,5 +118,6 @@
             </div>
         </div>
         <h3 class="text-danger" style="align-content:center; padding: 3px; margin-top:4px; font-size:15px;">@ViewBag.Message1</h3>
+        
     </body>
 </html>
