@@ -10,12 +10,21 @@ namespace WebApp.Controllers
 {
     public class UpdateController : Controller
     {
+        private readonly ISelectInterface _selectdetails;
+        public UpdateController(ISelectInterface selectdetails)
+        {
+            _selectdetails = selectdetails;
+        }
+
         [HttpGet]
         [Route("Update")]
         [Route("[controller]/[action]")]
         [Authorize]
         public IActionResult update0()
         {
+            List<Orders> ord = _selectdetails.getDetails();
+            _selectdetails.setDetails(ord);
+            _selectdetails.getId(ord);
             return View();
         }
 

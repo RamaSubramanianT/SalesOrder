@@ -8,91 +8,16 @@
     <head>
         <title>Login Page</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f4f4f4;
-                margin: 0;
-                padding: 0;
-                
-            }
-
             
-            .container {
-                max-width: 500px;
-                margin: 20px auto;
-                padding: 20px;
-                background-color: #fff;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-                background-color: #4158D0;
-                background-image: linear-gradient(43deg, #4158D0 0%, #C850C0 46%, #FFCC70 100%);
-                filter: blur(1px);
-            }
-
-            
-
-            form {
-                margin-top: 20px;
-            }
-
-            label {
-                display: block;
-                margin-bottom: 8px;
-                font-weight: bold;
-            }
-
-            input[type="text"] {
-                width: 100%; /* Adjust width as needed */
-                padding: 8px;
-                margin-bottom: 16px;
-                box-sizing: border-box;
-            
-                border-radius: 4px;
-            }
-
-            input[type="submit"] {
-                background-color: #4caf50;
-                color: #fff;
-                padding: 10px 15px;
-                border: none;
-                border-radius: 4px;
-                cursor: pointer;
-                font-size: 16px;
-                width: 100%;
-                margin-top: 10px;
-            }
-
-
-
-            input[type="submit"]:hover {
-                background-color: #45a049;
-            }
-
-            input[type="password"]{
-                width:100%;
-                height:40px;
-                border-radius:4px;
-            }
-        
-            .text-danger {
-                color: red;
-            }
-
-            h1 {
-                color: ghostwhite;
-                text-align: center;
-                font: bolder;
-                font-stretch: expanded;
-                margin-top:5px;
-            }
-
-        .container{
-            filter: drop-shadow(15px 26px 17px #000000);
-            }
-
             label{
                 color:ghostwhite;
             }
+
+        .textdanger {
+            color: ghostwhite;
+            font-size: medium;
+        }
+
         </style>
     </head>
     <body>
@@ -103,12 +28,12 @@
                     <div class="form-group">
                         <label for="username">Username</label>
                         <input asp-for="username" type="text" class="form-control" />
-                        <span asp-validation-for="@Model.username" class="text-danger"></span>
+                        <span asp-validation-for="@Model.username" class="textdanger"></span>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
                         <input asp-for="password" type="password" class="form-control" />
-                        <span asp-validation-for="@Model.password" class="text-danger"></span>
+                        <span asp-validation-for="@Model.password" class="textdanger"></span>
                     </div>
                     <br />
                     <br/>
@@ -117,7 +42,7 @@
                 </form>
             </div>
         </div>
-        <h3 class="text-danger" style="align-content:center; padding: 3px; margin-top:4px; font-size:15px;">@ViewBag.Message1</h3>
+        <h3 class="textdanger" style="align-content:center; padding: 3px; margin-top:4px; font-size:15px;">@ViewBag.Message1</h3>
         
     </body>
 </html>

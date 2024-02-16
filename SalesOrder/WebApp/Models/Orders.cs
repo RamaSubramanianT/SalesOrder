@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.ComponentModel.DataAnnotations;
 using System.Runtime.CompilerServices;
+using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Security.Cryptography;
 
 namespace WebApp.Models
 {
@@ -27,14 +29,24 @@ namespace WebApp.Models
         public int quantity { get; set; }
         public decimal totalprice { get; set; }
 
-        public Orders() { }
-
-        public Orders(int id, DateTime dat, string pid, int uid)
+        public Orders() {
+            orderid = 0;
+            orderdate = new DateTime();
+            price = 0m;
+            ProductId = "";
+            UserId = 1;
+            quantity = 0;
+            totalprice = 0m;
+        }
+        public Orders(int id, DateTime dat,decimal prc, string pid, int uid,int quan, decimal ttprc)
         {
             this.orderid = id;
             this.orderdate = dat;
+            this.price = prc;
             this.ProductId = pid;
             this.UserId = uid;
+            this.quantity = quan;
+            this.totalprice = ttprc;
         }
     }
 }

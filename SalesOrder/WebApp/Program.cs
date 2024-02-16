@@ -1,12 +1,15 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
+using log4net;
 using Serilog.Exceptions;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using System;
 using System.Net.Http;
-
+using log4net.Config;
+using Microsoft.Extensions.DependencyInjection;
+using WebApp.Models;
 
 public class Program {
     public static void Main(string[] args)
@@ -59,8 +62,11 @@ public class Program {
 
         builder.Services.AddRazorPages();
 
+        builder.Services.AddLog4net();
 
+        builder.Services.AddScoped<ISelectInterface, SelectDetails>();
 
+        builder.Services.AddSingleton<ISelectInterface, GetDetails>();
 
         var app = builder.Build();
 
@@ -104,5 +110,14 @@ public class Program {
 
     }
 
+}
+public static class Log4netExtensions
+{
+    public static void AddLog4net(this IServiceCollection services)
+    {
+        
+        XmlConfigurator.Configure(new FileInfo("C:/Users/ramasubramanian/source/GitRepos/OrderWebApp/SalesOrder/WebApp/web.config"));
+        services.AddSingleton(LogManager.GetLogger(typeof(Program)));
+    }
 }
 

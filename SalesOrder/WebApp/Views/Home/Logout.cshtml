@@ -66,6 +66,10 @@
             border-radius: 4px;
         }
 
+        .textdanger {
+            color: ghostwhite;
+            font-size: medium;
+        }
       
         
     </style>
@@ -76,7 +80,7 @@
         <form asp-controller="Home" asp-action="Logout" method="post">
             <label for="username">Are you sure you want to logout ?</label>
             <input asp-for="username" type="text" />
-            <span asp-validation-for="username" class="text-danger"></span>
+            <span asp-validation-for="username" class="textdanger"></span>
             <br />
             <br />
             <input type="Submit" value="Submit" />

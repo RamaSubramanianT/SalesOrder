@@ -11,6 +11,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Insert Information</title>
     <style>
         body {
@@ -81,35 +83,47 @@
             background-color: #45a049;
         }
 
-        .text-danger {
-            color: red;
+
+        .textdanger {
+            color: #ffe0d9;
+            font-size: medium;
+            font:bolder;
+            font-stretch:expanded;
+            text-align:right;
         }
     </style>
 </head>
 <body>
+    
+
     <div class="container">
         <h1>Insert</h1>
         <form asp-controller="Insert" asp-action="Insert" method="post">
             <label for="orderid">Order ID</label>
             <input asp-for="orderid" type="text" />
-            <span asp-validation-for="@Model.orderid" class="text-danger"></span>
+            <span asp-validation-for="@Model.orderid" class="textdanger"></span>
 
             <label for="prodid">Product ID</label>
             <input asp-for="ProductId" type="text"/>
-            <span asp-validation-for="@Model.ProductId" class="text-danger"></span>
+            <span asp-validation-for="@Model.ProductId" class="textdanger"></span>
 
             <label for="userid">User ID</label>
             <input asp-for="UserId" type="text"/>
-            <span asp-validation-for="@Model.UserId" class="text-danger"></span>
+            <span asp-validation-for="@Model.UserId" class="textdanger"></span>
 
             <label for="orderdate">Order Date</label>
             <input asp-for="orderdate" type="date" />
-            <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
-            <h3 class="text-danger" style="padding:3px; font-size:15px">@ViewBag.dateMessage</h3>
+            <span asp-validation-for="@Model.orderdate" class="textdanger"></span>
+            <h3 class="textdanger" style="padding:3px; font-size:15px">@ViewBag.dateMessage</h3>
 
-            <input type="submit" value="Submit" />
+            <input id="insertButton" type="submit" value="Submit" />
+            
         </form>
     </div>
-    <h3 class="text-danger" style="align-content:center; padding:3px; margin-top:5px; font-size:15px;">@ViewBag.Message</h3>
+    <h3 class="textdanger" style="text-align:right; padding:3px; margin-top:5px; font-size:15px;">@ViewBag.Message</h3>
+    
+
 </body>
 </html>
+
+

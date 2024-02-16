@@ -9,6 +9,8 @@
 <html>
     <head>
         <title>Delete Data</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <style>
             body {
                 font-family: Arial, sans-serif;
@@ -62,8 +64,10 @@
                     background-color: #45a049;
                 }
 
-            .text-danger {
-                color: red;
+            
+            .textdanger{
+                color:ghostwhite;
+                font-size:medium;
             }
         </style>
     </head>
@@ -73,12 +77,12 @@
             <form asp-controller="Delete" asp-action="delete" method="post">
                 <label for="orderid">OrderId</label>
                 <input asp-for="@Model.orderid" type="text"/>
-                <span asp-validation-for="@Model.orderid" class="text-danger"></span>
+                <span asp-validation-for="@Model.orderid" class="textdanger"></span>
                 <br/>
-                <input type = "submit" value="Submit"/>
+                <input id="deleteButton" type = "submit" value="Submit"/>
             </form>
         
         </div>
-        <h3 class="text-danger" style="align-content:center; padding:3px; margin-top:4px; font-size:15px">@ViewBag.Message</h3>
+        <h3 class="textdanger" style="align-content:center; padding:3px; margin-top:4px; font-size:15px">@ViewBag.Message</h3>
     </body>
 </html>

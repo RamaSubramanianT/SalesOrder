@@ -24,7 +24,7 @@ body {
     margin: 10px;
     padding: 10px;
     background: linear-gradient(200,89,200);
-    font-family: 'Times New Roman', serif;
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", Helvetica, Arial, sans-serif;
     background-color: #f8f9fa;
     color: #212529;
     background: #70e1f5; /* fallback for old browsers */
@@ -44,7 +44,8 @@ header {
 }
 
 .navbar-nav .nav-link {
-    color: #212529; 
+    color: #212529;
+    float:left;
 }
 
 .footer {
@@ -195,6 +196,7 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #45a049;
+    border-radius:4px;
 }
 
 input[type="password"] {
@@ -217,8 +219,15 @@ h1 {
 
 .container {
     filter: drop-shadow(15px 26px 17px #000000);
+    border-radius: 23px;
+    backdrop-filter: blur(20px);
 }
 
 label {
     color: ghostwhite;
+}
+
+
+a.nav-brand{
+    background-image:url(/css/3.jpg);
 }

@@ -66,9 +66,11 @@
             background-color: #45a049;
         }
 
-        .text-danger {
-            color: red;
-        }
+
+            .textdanger {
+                color: ghostwhite;
+                font-size: medium;
+            }
     </style>
 </head>
 <body>
@@ -79,7 +81,7 @@
         <form asp-controller ="Order" asp-action ="Details0" method="post">
             <label for="orderid">OrderId</label><br/>
             <input asp-for="orderid" type="text"/><br/>
-            <span asp-validation-for="orderid" class="text-danger"></span>
+            <span asp-validation-for="orderid" class="textdanger"></span>
             <input type="submit" value="Submit" />
             <h6></h6>
         </form>

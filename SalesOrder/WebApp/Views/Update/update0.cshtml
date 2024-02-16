@@ -70,6 +70,10 @@
             background-color: #45a049;
         }
 
+        .textdanger {
+            color: ghostwhite;
+            font-size: medium;
+        }
     </style>
 </head>
 <body>
@@ -78,15 +82,15 @@
         <form asp-controller="Update" asp-action="update0" method="post">
             <label for="orderid">OrderId</label>
             <input asp-for="orderid" type="text"/>
-            <span asp-validation-for="@Model.orderid" class="text-danger"></span>
+            <span asp-validation-for="@Model.orderid" class="textdanger"></span>
             <br />
             <label for="orderdate">Order Date</label>
             <input asp-for="orderdate" type="date"/>
-            <span asp-validation-for="@Model.orderdate" class="text-danger"></span>
+            <span asp-validation-for="@Model.orderdate" class="textdanger"></span>
             <br />
             <input type="submit" value="Submit" />
          </form>
     </div>
-    <h3 class="text-danger" style="align-content:center; padding:3px; margin-top:4px; font-size:15px">@ViewBag.Message</h3>
+    <h3 class="textdanger" style="align-content:center; padding:3px; margin-top:4px; font-size:15px">@ViewBag.Message</h3>
 </body>
 </html>
