@@ -10,6 +10,8 @@ using System.Net.Http;
 using log4net.Config;
 using Microsoft.Extensions.DependencyInjection;
 using WebApp.Models;
+using Microsoft.AspNetCore.Antiforgery;
+using System.Collections.Generic;
 
 public class Program {
     public static void Main(string[] args)
@@ -68,6 +70,21 @@ public class Program {
 
         builder.Services.AddSingleton<ISelectInterface, GetDetails>();
 
+        builder.Services.AddWebOptimizer((pipeline =>
+        {
+            pipeline.AddJavaScriptBundle("/js/bundle.js", "js/**/*.js", "lib/bootstrap/dist/js/**/*.js", "lib/jquery/dist/**/*.js");
+            pipeline.AddCssBundle("/css/bundle.css", "/css/file1.css", "/css/site.css");
+
+        }));
+
+        builder.Services.AddAntiforgery(options =>
+        {
+            // Set Cookie properties using CookieBuilder properties†.
+            options.FormFieldName = "AntiforgeryFieldname";
+            options.HeaderName = "X-CSRF-TOKEN-HEADERNAME";
+            options.SuppressXFrameOptionsHeader = false;
+        });
+
         var app = builder.Build();
 
         if (!app.Environment.IsDevelopment())
@@ -77,6 +94,8 @@ public class Program {
         }
 
         app.UseHttpsRedirection();
+
+        app.UseWebOptimizer();
 
         app.UseStaticFiles();
 
@@ -96,8 +115,13 @@ public class Program {
             header.Add("Message", "Developed By Ram");
             header.Add("Message1", "Powered By OjCommerce");
             header.Add("Message2", "Developed Using Asp.Net Core");
+            //header.Add("Content-Security-Policy", "default-src 'self'; script-src 'self' stackpath.bootstrapcdn.com; style-src 'self' stackpath.bootstrapcdn.com;");
+            
             return next();
         });
+
+    
+
 
 
         app.MapControllerRoute(
@@ -105,6 +129,9 @@ public class Program {
             pattern: "{controller=Home}/{action=Login}/{orderid?}");
 
         app.MapRazorPages();
+
+
+        
 
         app.Run();
 

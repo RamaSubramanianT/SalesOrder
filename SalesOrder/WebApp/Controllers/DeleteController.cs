@@ -20,6 +20,7 @@ namespace WebApp.Controllers
         [HttpPost]
         [Route("DeleteElement")]
         [Route("[controller]/[action]")]
+        [ValidateAntiForgeryToken]
         public IActionResult Delete(DeleteVM fc)
         {
             int id = fc.orderid;

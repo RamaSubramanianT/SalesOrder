@@ -5,6 +5,8 @@
     ViewBag.Title = "Delete";
 }
 @model WebApp.ViewModel.DeleteVM
+@using Microsoft.AspNetCore.Antiforgery
+@inject IAntiforgery Antiforgery
 
 <html>
     <head>
@@ -74,6 +76,7 @@
     <body>
         <div class="container">
             <h1>Delete</h1>
+            @Html.AntiForgeryToken()
             <form asp-controller="Delete" asp-action="delete" method="post">
                 <label for="orderid">OrderId</label>
                 <input asp-for="@Model.orderid" type="text"/>
